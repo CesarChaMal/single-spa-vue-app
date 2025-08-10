@@ -3,7 +3,12 @@ const webpack = require('webpack');
 
 module.exports = {
   devServer: {
+	port: 4205,
     writeToDisk: true,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
+	
   },
   configureWebpack: {
     output: {
@@ -11,6 +16,7 @@ module.exports = {
       libraryTarget: 'umd',
       filename: 'single-spa-vue-app.js',
       path: path.resolve(__dirname, 'dist'),
+	  publicPath: 'http://localhost:4205/'
     },
     plugins: [
       new webpack.optimize.LimitChunkCountPlugin({
