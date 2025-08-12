@@ -16,7 +16,6 @@ module.exports = {
       libraryTarget: 'umd',
       filename: 'single-spa-vue-app.js',
       path: path.resolve(__dirname, 'dist'),
-	  publicPath: 'http://localhost:4205/'
     },
     plugins: [
       new webpack.optimize.LimitChunkCountPlugin({
